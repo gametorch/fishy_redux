@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fishy Redux!</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>
+      <img src="/assets/images/crayon/playable_fish/fish_3.png" alt="Crayon fish icon" class="title-icon crayon-icon" />
+      Fishy Redux!
+      <img src="/assets/images/retro/playable_fish/fish_3.png" alt="Retro fish icon" class="title-icon" />
+    </h1>
+  </header>
+  <main>
+    <p>
+      I remade the ancient flash game
+      <a href="https://www.crazygames.com/game/fishy" target="_blank" rel="noopener noreferrer">fishy</a>.
+    </p>
+    <p>
+      It's written in rust. It compiles to Linux, Mac, Windows, and WASM for the
+      browser. I wrote no code. I described and curated the art for the game, but didn't
+      paint any pixels myself.
+    </p>
+
+    <!-- Interactive area (videos or canvas) -->
+    <section class="interactive-area">
+      <!-- Video carousel for small screens -->
+      <div class="video-carousel" id="videoCarousel">
+        <video src="/videos/crayon.mp4" playsinline muted loop></video>
+        <video src="/videos/chibi.mp4" playsinline muted loop></video>
+        <video src="/videos/retro.mp4" playsinline muted loop></video>
+      </div>
+
+      <!-- Canvas for larger screens -->
+      <canvas id="gameCanvas" width="1280" height="720"></canvas>
+    </section>
+
+    <p>
+      I did this in 24 hours. o3 wrote all the code for me.
+      <a href="https://gametorch.app/?source=fishy" target="_blank" rel="noopener noreferrer">GameTorch</a>
+      generated all the assets. In total, I think the bill was around ~$20 between the code and the assets.
+    </p>
+
+    <p>This purpose of this project is threefold:</p>
+    <ol>
+      <li>To provide the world with another open source example of a rust → wasm → browser game.</li>
+      <li>To promote my asset generator, editor, and animator, <a href="https://gametorch.app/?source=fishy" target="_blank" rel="noopener noreferrer">GameTorch</a>.</li>
+      <li>
+        To showcase the absurd restructuring of value that is about to be caused by AI.
+      </li>
+    </ol>
+    <p></p>
+    <p>
+      <img src="/assets/images/retro/flora/e_260.png" alt="Retro underwater flora" class="float-img" />
+      I was cooking and cleaning while my more than sufficient programmers and artists were toiling away for a couple bucks an hour. I didn't interview anyone. I didn't talk to legal. I didn't talk to HR. I never got on the phone or Zoom. I never signed a contract. I never collected or remitted personal info for various regulatory and tax agencies normally involved in hiring someone. I never ran payroll. No one suffered through emotional turmoil and had to take the day off (seriously, everyone should take a mental health day!).
+    </p>
+    <p>
+      The rate at which code and art is produced far exceeds that of anyone I've interacted with, and I've worked alongside some of the best. The cost of producing the code and art is far less than what it would cost to hire someone, not even accounting for legal and regulatory overhead, which is reasonably an additional 25–40% of their base salary.
+    </p>
+    <p>
+      Whether we like it or not, a great restructuring of white collar work is underway. This restructuring is accelerating, as models
+      which replace the work are getting better, faster, and cheaper with time. I'm not speculating more than that. I'm not initiating a call to action. I just feel obliged to point out that it's happening.
+    </p>
+    <p>
+      Are you scared? I was kind of scared. Now, I feel empowered. I just made a game and for every crazy idea that I had, I could implement it in just a few minutes — like the beautiful little light on the <a href="https://en.wikipedia.org/wiki/Humpback_anglerfish" target="_blank" rel="noopener noreferrer">angler fish</a> you can play as in the game. As a kid, I had so many grandiose dreams and manic visions of what I would build. Now, it all seems possible. We are still the creators. We're still the curators. We just don't need to be as involved in the nitty gritty, if we don't want to be. But that's also how it's always worked. Ask yourself: what do CEOs and CTOs really do? They implement their grand visions, for ill or good, by ordering around workers. Hopefully they do this with kindness and respect. <em>Everyone</em> will soon be a CEO and a CTO and a Chief Design Officer. As each day passes, everyone becomes more empowered to implement their vision.
+    </p>
+    <p></p>
+    <h2>Browse, Edit, and Animate the Assets</h2>
+    <p>You can browse, edit, and animate the assets here:</p>
+    <ul>
+      <li><a href="https://gametorch.app/collections/1?source=fishy&style=crayon" target="_blank" rel="noopener noreferrer">Crayon Assets</a></li>
+      <li><a href="https://gametorch.app/collections/19?source=fishy&style=chibi" target="_blank" rel="noopener noreferrer">Chibi Assets</a></li>
+      <li><a href="https://gametorch.app/collections/20?source=fishy&style=retro" target="_blank" rel="noopener noreferrer">Retro Assets</a></li>
+    </ul>
+    <p></p>
+    <p></p>
+    <h2>Play Fishy Redux! on Desktop</h2>
+    <p>
+      I haven't precompiled anything yet. So there are no binaries you can just run. But you can build from source. Just clone <a href="https://github.com/gametorch/fishy_redux" target="_blank" rel="noopener noreferrer">this repository</a> and run <code>cargo run</code> to play the game on your desktop.
+    </p>
+    <p class="bottom-fish-wrapper">
+      <img src="/assets/images/retro/fish/e_167.png" alt="Retro fish sprite" class="bottom-fish" />
+    </p>
+  </main>
+  <footer>
+    <p>All you need is the mind's eye.</p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html> 

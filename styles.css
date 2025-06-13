@@ -1,0 +1,181 @@
+/*=======================================================
+  Fishy Redux – Crayon Ocean Theme
+=======================================================*/
+:root {
+  --baby-blue: #b3e5fc;
+  --ocean-blue: #4fc3f7;
+  --accent-orange: #ffab40;
+  --text-dark: #004d61;
+}
+
+/* Reset & basic layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  font-family: "Comic Sans MS", "Comic Neue", "Fredoka", cursive, sans-serif;
+  color: var(--text-dark);
+  background: linear-gradient(180deg, var(--baby-blue) 0%, #d8f6ff 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 1.25rem;
+  text-align: center;
+  background: var(--ocean-blue);
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+}
+
+main {
+  flex: 1 0 auto;
+  max-width: 960px;
+  padding: 1.5rem 1rem 3rem;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+p + p, p + ol {
+  margin-top: 1em;
+}
+
+ol {
+  padding-left: 1.5rem;
+}
+
+li + li {
+  margin-top: 0.75em;
+}
+
+/* Links */
+a {
+  color: var(--accent-orange);
+  text-decoration-thickness: 2px;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Interactive Area */
+.interactive-area {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Canvas styles */
+#gameCanvas {
+  width: 100%;
+  max-width: 1280px;
+  aspect-ratio: 16 / 9;
+  border: 6px dashed var(--accent-orange);
+  border-radius: 12px;
+  background: #000; /* fallback until game starts */
+  box-shadow: 0 0 0 4px #fff inset, 0 8px 16px rgba(0,0,0,0.25);
+}
+
+/* Video carousel styles */
+.video-carousel {
+  display: none; /* toggled via media queries */
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
+  border: 6px dashed var(--accent-orange);
+  border-radius: 12px;
+  box-shadow: 0 0 0 4px #fff inset, 0 8px 16px rgba(0,0,0,0.25);
+}
+
+.video-carousel video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.video-carousel video.active {
+  opacity: 1;
+}
+
+/* Footer */
+footer {
+  background: var(--ocean-blue);
+  color: #fff;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/*============================================
+  Responsive Rules
+============================================*/
+/* Small screens (phones & small tablets) */
+@media (max-width: 768px) {
+  #gameCanvas {
+    display: none;
+  }
+  .video-carousel {
+    display: block;
+  }
+}
+
+/* Larger screens (tablet & desktop) */
+@media (min-width: 769px) {
+  #gameCanvas {
+    display: block;
+  }
+  .video-carousel {
+    display: none;
+  }
+}
+
+/* Title icons (little fishes next to the heading) */
+.title-icon {
+  height: 1em;         /* same height as text */
+  width: auto;         /* preserve aspect ratio */
+  vertical-align: -0.15em; /* align better with text baseline */
+  margin: 0 0.35em;    /* small side padding */
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.45));
+}
+
+/* Floating inline images inside paragraphs */
+.float-img {
+  float: right;
+  max-width: 240px;
+  width: 40%;
+  height: auto;
+  margin: 0 0 1rem 1rem; /* top-right bottom-left order; some left margin for text wrap */
+}
+
+/* Bottom fish sprite */
+.bottom-fish {
+  display: block;
+  width: 120px;
+  max-width: 40vw;
+  height: auto;
+  margin: 2rem auto 0; /* center horizontally */
+}
+
+.bottom-fish-wrapper {
+  text-align: center;
+  clear: both; /* ensure footer sits below any floats */
+}
