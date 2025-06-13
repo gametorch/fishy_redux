@@ -1,0 +1,53 @@
+[package]
+name = "fishy_redux"
+version = "0.1.0"
+license = "MIT"
+edition = "2021"
+build = "build.rs"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+getrandom = { version = "0.3", features = ["wasm_js"] }
+getrandom_0_2 = { package = "getrandom", version = "0.2", features = ["js"] }
+
+[dependencies]
+# Enable MP3 decoding support for audio playback
+bevy = { version = "0.16.1", features = ["mp3"] }
+rand = "0.8"
+rand_distr = "0.4"
+bevy_light_2d = "0.6"
+# 
+# Uncomment the following line when compiling the release build.
+# "Bevy's dependencies do a lot of trace logging that is not relevant
+# for an end user. To improve your runtime performance, you can add
+# the following to the [dependencies] section of your Cargo.toml.
+# It will disable detailed log levels on compile time so that they
+# do not need to be filtered out while your app is running."
+# 
+# log = { version = "*", features = ["max_level_debug", "release_max_level_warn"] }
+
+# Enable a small amount of optimization in the dev profile.
+[profile.dev]
+opt-level = 1
+
+# Enable a large amount of optimization in the dev profile for dependencies.
+[profile.dev.package."*"]
+opt-level = 3
+
+# Enable more optimization in the release profile at the cost of compile time.
+[profile.release]
+# Compile the entire crate as one unit.
+# Slows compile times, marginal improvements.
+codegen-units = 1
+# Do a second optimization pass over the entire program, including dependencies.
+# Slows compile times, marginal improvements.
+lto = "thin"
+
+# Optimize for size in the wasm-release profile to reduce load times and bandwidth usage on web.
+[profile.wasm-release]
+# Default to release profile values.
+inherits = "release"
+# Optimize with size in mind (also try "z", sometimes it is better).
+# Slightly slows compile times, great improvements to file size and runtime performance.
+opt-level = "s"
+# Strip all debugging information from the binary to slightly reduce file size.
+strip = "debuginfo"
