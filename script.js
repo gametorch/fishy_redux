@@ -41,6 +41,9 @@ async function initGameIfNeeded() {
   const isVisible = canvas.offsetParent !== null;
   if (!isVisible) return;
 
+  // Record current scroll position so we can restore it later.
+  const originalScrollY = window.scrollY;
+
   try {
     // The generated Bevy WASM glue typically has the same name as the crate.
     // Adjust the path as needed if the build output differs.
@@ -72,6 +75,11 @@ async function initGameIfNeeded() {
     }
   } catch (err) {
     console.error("Failed to load WebAssembly game:", err);
+  } finally {
+    // Restore the scroll position (use a timeout to allow layout to settle).
+    setTimeout(() => {
+      window.scrollTo({ top: originalScrollY, behavior: "instant" });
+    }, 0);
   }
 }
 

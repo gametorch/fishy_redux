@@ -18,7 +18,7 @@
 html, body {
   width: 100%;
   min-height: 100%;
-  font-family: "Gaegu", "Schoolbell", "Comic Neue", sans-serif;
+  font-family: "Indie Flower", "Schoolbell", sans-serif;
   color: var(--text-dark);
   background: linear-gradient(180deg, var(--baby-blue) 0%, #d8f6ff 100%);
   display: flex;
@@ -31,6 +31,10 @@ header {
   background: var(--ocean-blue);
   color: #fff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Gaegu", "Schoolbell", sans-serif;
 }
 
 h1 {
@@ -153,7 +157,7 @@ footer {
   height: 1em;         /* same height as text */
   width: auto;         /* preserve aspect ratio */
   vertical-align: -0.15em; /* align better with text baseline */
-  margin: 0 0.35em;    /* small side padding */
+  margin: 0;
   filter: drop-shadow(0 0 3px rgba(0,0,0,0.45));
 }
 
