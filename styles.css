@@ -18,7 +18,7 @@
 html, body {
   width: 100%;
   min-height: 100%;
-  font-family: "Comic Sans MS", "Comic Neue", "Fredoka", cursive, sans-serif;
+  font-family: "Gaegu", "Schoolbell", "Comic Neue", sans-serif;
   color: var(--text-dark);
   background: linear-gradient(180deg, var(--baby-blue) 0%, #d8f6ff 100%);
   display: flex;
