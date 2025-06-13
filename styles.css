@@ -18,7 +18,7 @@
 html, body {
   width: 100%;
   min-height: 100%;
-  font-family: "Indie Flower", "Schoolbell", sans-serif;
+  font-family: "Gaegu", sans-serif;
   color: var(--text-dark);
   background: linear-gradient(180deg, var(--baby-blue) 0%, #d8f6ff 100%);
   display: flex;
